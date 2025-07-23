@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+}
+
+.left-div {
+  display: flex;
+  flex-direction: column;
+  padding: 280px;
+  padding-right: 0px;
+}
+
+.grid-size-div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.opacity-level-div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input {
+  height: 30px;
+  width: 150px;
+  border-color: black;
+  border-width: medium;
+  border-style: solid;
+}
+label {
+  font-size: 20px;
+}
+.right-div{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.grid-container-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+.
