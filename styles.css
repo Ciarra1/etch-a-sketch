@@ -5,10 +5,14 @@
 .container {
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 .content {
+  height: 80%;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 .header {
   display: flex;
@@ -19,10 +23,12 @@
   justify-content: center;
 }
 .left-div {
+  transform: scale(1.3);
   display: flex;
   flex-direction: column;
-  padding: 280px;
-  padding-right: 0px;
+
+  padding: 5rem;
+  padding-left: 15rem;
 }
 
 .grid-size-div {
@@ -52,6 +58,7 @@ label {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 7rem;
 }
 .grid-container-div {
   display: flex;
@@ -63,4 +70,24 @@ label {
   display: flex;
   height: 100px;
   width: 100%;
+}
+
+@media (max-width: 600px) {
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .left-div {
+    padding: 2rem;
+    transform: scale(0.8);
+    padding-bottom: 0.5rem;
+  }
+  .right-div {
+    padding-top: 1rem;
+  }
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
 }

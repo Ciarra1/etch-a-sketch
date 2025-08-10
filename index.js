@@ -1,33 +1,35 @@
 
 const generateGridBtn = document.querySelector(".generate-grid-btn");
 const gridDiv = document.querySelector(".grid-container-div");
-function createGrid(gridSize){
-        
-        if(gridSize){
+function createGrid(gridSize) {
+    if (gridSize) {
+        gridDiv.innerHTML = "";
 
-            gridDiv.innerHTML = "";
+        const heightMultiplier = window.innerWidth < 600 ? 0.5 : 0.75;
 
-            const gridWidth = 650;
-            let borderSize = 2;
-            const boxSize = (gridWidth - (gridSize * borderSize * 2)) / gridSize;
+        const maxWidth = window.innerWidth * 0.9;
+        const maxHeight = window.innerHeight * heightMultiplier; 
+        const gridSizePx = Math.min(650, maxWidth, maxHeight);
 
+        let borderSize = 2;
+        const boxSize = (gridSizePx - (gridSize * borderSize * 2)) / gridSize;
 
-            gridDiv.style.width = gridWidth +"px";
-            gridDiv.style.height = gridWidth +"px";
-            for(let i = 0; i < gridSize * gridSize; i++){
-                
+        gridDiv.style.width = gridSizePx + "px";
+        gridDiv.style.height = gridSizePx + "px";
+
+        for (let i = 0; i < gridSize * gridSize; i++) {
             const squares = document.createElement("div");
             squares.style.width = boxSize + "px";
             squares.style.height = boxSize + "px";
             squares.style.border = borderSize + "px solid black"; 
             hoverEffect(squares);
             gridDiv.appendChild(squares);
-
-            }
-        } else {
-            alert("Missing grid size");
         }
+    } else {
+        alert("Missing grid size");
+    }
 }
+
 function getOpacityLevel() {
     const opacityLevel = (document.getElementById("opacity-level").value);
     return opacityLevel ? parseFloat(opacityLevel) / 100 : NaN;
